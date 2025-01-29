@@ -1,4 +1,4 @@
-# Simulating a sample Titanic dataset for demonstration purposes
+
 import pandas as pd
 data = {
     "PassengerId": range(1, 11),
@@ -26,21 +26,21 @@ data = {
     "Embarked": ["S", "C", "Q", "S", "C", "S", "C", "S", "Q", "S"],
 }
 
-# Create a DataFrame
+
 titanic_data = pd.DataFrame(data)
 
-# Display the first few rows
+
 titanic_data.head()
-# Checking for missing values and data types
+
 titanic_data.info()
 
-# Statistical summary of numerical features
+
 titanic_data.describe()
-# Dropping irrelevant columns: 'Cabin', 'PassengerId', and 'Name'
+
 titanic_cleaned = titanic_data.drop(columns=["Cabin", "PassengerId", "Name"])
 
-# Checking for duplicate rows
+
 duplicates = titanic_cleaned.duplicated().sum()
 
-# Display the cleaned dataset and duplicates count
+
 titanic_cleaned, duplicates
